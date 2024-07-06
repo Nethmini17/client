@@ -1,5 +1,6 @@
 import useFetch from "../../hooks/useFetch";
 import "./featured.css";
+import LoadingSkelton from "../loadingSkelton/LoadingSkelton";
 
 export const Featured = () => {
   const { data, loading, error } = useFetch(
@@ -8,7 +9,7 @@ export const Featured = () => {
 
   return (
     <div className="featured">
-      { loading ? ("Loading please wait"):(
+      { loading ? <LoadingSkelton/>:(
         <>
           <div className="featuredItem">
             <img

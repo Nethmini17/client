@@ -1,6 +1,7 @@
 import React from "react";
 import "./propertyList.css";
 import useFetch from "../../hooks/useFetch";
+import LoadingSkelton from "../loadingSkelton/LoadingSkelton";
 
 const PropertyList = () => {
   const { data, loading, error } = useFetch("/hotels/countByType");
@@ -15,7 +16,7 @@ const PropertyList = () => {
   return (
     <div className="pList">
       {loading ? (
-        "Loading please wait"
+       <LoadingSkelton/>
       ) : (
         <>
          {data && images.map((img,i)=>(

@@ -1,13 +1,14 @@
 import React from "react";
 import "./featuredProperties.css";
 import useFetch from "../../hooks/useFetch";
+import LoadingSkelton from "../loadingSkelton/LoadingSkelton";
 
 const FeaturedProperties = () => {
   const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
   return (
     <div className="fp">
       {loading ? (
-        "Loading"
+        <LoadingSkelton/>
       ) : (
         <>
           {data.map((item) => (

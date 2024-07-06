@@ -18,6 +18,7 @@ import { SearchContext } from "../../context/SearchContext.js";
 import { AuthContext } from "../../context/AuthContext.js";
 import { useNavigate } from "react-router-dom";
 import Reserve from "../../components/reserve/Reserve";
+import LoadingSkelton from "../../components/loadingSkelton/LoadingSkelton";
 
 const Hotel = () => {
   const location = useLocation();
@@ -67,7 +68,7 @@ const Hotel = () => {
       <Navbar />
       <Header type="list" />
       {loading ? (
-        "loading"
+        <LoadingSkelton/>
       ) : (
         <div className="hotelContainer">
           {open && (
